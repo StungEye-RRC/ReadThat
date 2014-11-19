@@ -1,3 +1,19 @@
+<?php
+  require('database.php');
+  $error_message = false;
+  $success_message = false;
+
+  if ($_POST) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (user_login_successful($db, $username, $password)) {
+      $success_message = true;
+    } else {
+      $error_message = true;
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +21,17 @@
     <link type="text/css" rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <?php if ($error_message): ?>
     <div class="error">
-      <strong>Login Failed:</strong>
+      Login Failed.
     </div>
-    <div class="success">Login Successful.</div>
+  <?php endif; ?>
+
+  <?php if ($success_message): ?>
+    <div class="success">
+      Login Successful.
+    </div>
+  <?php endif; ?>
 
     <form action="login.php" method="post" class="login">
         <fieldset>

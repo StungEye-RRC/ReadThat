@@ -2,8 +2,18 @@
 @import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
 
 body {
-    background-color: #ecf0f1;
+    background-color: #2980b9;
     font-family: 'Roboto';
+    color: #222;
+}
+
+a {
+  color: #0E364F;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #1D638E;
 }
 
 form {
@@ -11,7 +21,25 @@ form {
 }
 
 form.login, form.registration {
-    width: 180px;
+    width: 400px;
+}
+
+form.login input[type=text],
+form.login input[type=password],
+form.login input[type=submit] {
+  font-family: 'Roboto';
+  font-size: 1.2em;
+  color: #222;
+}
+
+form input[type=text],
+form input[type=password] {
+  width: 350px;
+  height: 40px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  outline: none;
 }
 
 form.login fieldset {
@@ -22,20 +50,22 @@ form.login fieldset {
 
 form.login input[type=submit] {
     background-color: #2980b9;
-    border: 1px solid #2c3e50;
+    border: 2px solid #2980b9;
+    border-radius: 3px;
+    color: white;
     margin-top: 1em;
     padding: 0.5em;
-    border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
 form.login input[type=submit]:hover {
     background-color: #3498db;
-    transition: all 0.5s linear;
+    border: 2px solid #2980b9;
 }
 
 form.login h4 {
-    font-size: 2em;
     color: #172120;
+    font-size: 2em;
     margin-bottom: 1em;
 }
 
@@ -45,20 +75,17 @@ form.login input[type=text], form.login input[type=password] {
 
 div.error, div.success {
     margin: 10px auto 0px auto;
-    padding: 3px;
+    padding: 1em 0;
     text-align: center;
     width: 400px;
 }
 
 div.error {
     background-color: #e74c3c;
-    border: 2px solid #c0392b;
-
 }
 
 div.success {
     background-color: #2ecc71;
-    border: 2px solid #27ae60;
 }
 
 .right {

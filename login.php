@@ -13,12 +13,16 @@
     <form action="login.php" method="post" class="login">
         <fieldset>
             <h4>ReadThat Login</h4>
-            <label for="username">Username: </label>
-            <input id="username" name="username" type="text">
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password">
+            <p>
+              <input name="username" type="text" placeholder="User Name" />
+            </p>
+            <p>
+              <input name="password" type="password" placeholder="Password"/>
+            </p>
             <p class="right">
                 <a href="register.php">Register New Account</a>
+            </p>
+            <p class="right">
                 <input name="submit" value="login" type="submit">
             </p>
         </fieldset>

@@ -10,16 +10,19 @@
     <div class="success">
         Registration Successful. <a href="login.php">Login?</a>
     </div>
-    
+
     <form action="register.php" method="post" class="login">
         <fieldset>
             <h4>ReadThat Registration</h4>
-            <label for="username">Username: </label>
-            <input id="username" name="username" type="text" />
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password" />
-            <label for="password_confirmation">Confirm Password: </label>
-            <input id="password_confirmation" name="password_confirmation" type="password" />
+            <p>
+              <input name="username" type="text" placeholder="User Name" />
+            </p>
+            <p>
+              <input name="password" type="password" placeholder="Password"/>
+            </p>
+            <p>
+              <input name="password_confirmation" type="password" placeholder="Confirm Password" />
+            </p>
             <p class="right">
                 <input name="submit" value="register" type="submit" />
             </p>

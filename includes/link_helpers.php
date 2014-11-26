@@ -7,4 +7,10 @@
         return Database::prepare_and_execute($sql, $new_links_row);
     }
 
+    function get_all_links() {
+        $data = [];
+        $sql = "SELECT * FROM links";
+        $links = Database::prepare_and_execute($sql, $data);
+        return $links->fetchAll();
+    }
 ?>

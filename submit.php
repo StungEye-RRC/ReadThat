@@ -13,7 +13,12 @@
   if ($_POST) {
     $title = $_POST['title'];
     $url   = $_POST['url'];
-    if (add_link_from_user($title, $url, $user)) {
+    
+    if (strlen($title) == 0) {
+      UserMessage::set_message('error', 'Sorry, the title cannot be blank.');
+    } else if (strlen($url) == 0) {
+      UserMessage::set_message('error', 'Sorry, the URL cannot be blank.');
+    } else if (add_link_from_user($title, $url, $user)) {
       UserMessage::set_message('success', 'Link Added. Thanks!');
     } else {
       UserMessage::set_message('error', 'Sorry, could not add that link.');

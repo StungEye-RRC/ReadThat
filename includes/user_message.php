@@ -1,7 +1,7 @@
 <?php
 
-class UserMessage
-{
+class UserMessage {
+  
   private $messages;
 
   public static function get_instance() {
@@ -12,6 +12,9 @@ class UserMessage
     return $instance;
   }
 
+  private function __construct() {
+  }
+  
   public static function set_message($key, $message) {
     self::get_instance()->messages[$key] = $message;
   }
@@ -27,3 +30,5 @@ class UserMessage
   }
 
 }
+
+?>

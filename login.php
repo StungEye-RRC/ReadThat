@@ -9,6 +9,7 @@
 
     if (user_login_successful($username, $password)) {
       UserMessage::set_message('success', 'Login Successful.');
+      login_in_user($username);
     } else {
       UserMessage::set_message('error','Username or Password is incorrect.');
     }

@@ -1,4 +1,25 @@
 <?php
+session_start();
+
+function get_the_current_user() {
+  if (isset($_SESSION['logged_in_user'])) {
+    return find_user_by_name($_SESSION['logged_in_user']);
+  } else {
+    return false;
+  }
+}
+
+function log_out_user() {
+  session_destroy();
+  header('Location: index.php');
+  exit;
+}
+
+function login_in_user($username) {
+  $_SESSION['logged_in_user'] = $username;
+  header('Location: index.php');
+  exit;
+}
 
 function add_new_user_to_database($username, $password) {
   $new_users_row = ['username' => $username, 'password' => password_hash($password, PASSWORD_DEFAULT )];

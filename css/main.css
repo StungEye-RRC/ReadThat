@@ -66,6 +66,7 @@ form h4 {
 }
 
 div.error, div.success {
+    color: white;
     margin: 10px auto 0px auto;
     padding: 1em 0;
     text-align: center;

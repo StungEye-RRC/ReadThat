@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+function redirect_to($path) {
+  header('Location: ' . $path);
+  exit;
+}
+
 function get_the_current_user() {
   if (isset($_SESSION['logged_in_user'])) {
     return find_user_by_name($_SESSION['logged_in_user']);
@@ -11,14 +16,12 @@ function get_the_current_user() {
 
 function log_out_user() {
   session_destroy();
-  header('Location: index.php');
-  exit;
+  redirect_to('index.php');
 }
 
 function login_in_user($username) {
   $_SESSION['logged_in_user'] = $username;
-  header('Location: index.php');
-  exit;
+  redirect_to('index.php');
 }
 
 function add_new_user_to_database($username, $password) {

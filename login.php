@@ -1,6 +1,7 @@
 <?php
   require('includes/database.php');
   require('includes/user_message.php');
+  require('includes/user_helpers.php');
 
   if ($_POST) {
     $username = $_POST['username'];

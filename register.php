@@ -14,9 +14,9 @@
     } else if (strlen($password) < 8) {
       UserMessage::set_message('error', 'Your password must be greater than 8 characters.');
     } else {
-      $users = find_users_in_database($db, $username);
+      $users = find_users_in_database($username);
       if (count($users) == 0) {
-        add_new_user_to_database($db, $username, $password);
+        add_new_user_to_database($username, $password);
         UserMessage::set_message('success', 'Registration Successful.');
       } else {
         UserMessage::set_message('error', 'Sorry that username is already taken.');

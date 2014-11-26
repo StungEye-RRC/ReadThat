@@ -4,8 +4,7 @@ class UserMessage
 {
   private $messages;
 
-  public static function get_instance()
-  {
+  public static function get_instance() {
     static $instance = null;
     if (null === $instance) {
       $instance = new static();
@@ -13,11 +12,11 @@ class UserMessage
     return $instance;
   }
 
-  public function set_message($key, $message) {
+  public static function set_message($key, $message) {
     self::get_instance()->messages[$key] = $message;
   }
 
-  public function get_message($key) {
+  public static function get_message($key) {
      $instance = self::get_instance();
 
      if (isset($instance->messages[$key])) {

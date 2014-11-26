@@ -18,9 +18,10 @@
 <?php if (count($links) == 0): ?>
   <p>No links found.</p>
 <?php else: ?>
+<pre><?php print_r($links) ?></pre>
   <ul>
     <?php foreach($links as $link): ?>
-      <li><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>
+      <li><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?></li>
     <?php endforeach ?>
   </ul>
 <?php endif ?>

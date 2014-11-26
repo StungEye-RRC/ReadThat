@@ -2,11 +2,22 @@
   require('includes/database.php');
   require('includes/user_message.php');
   require('includes/user_helpers.php');
+  require('includes/link_helpers.php');
   
   $user = get_the_current_user();
   
   if (!$user) {
     redirect_to('login.php');
+  }
+  
+  if ($_POST) {
+    $title = $_POST['title'];
+    $url   = $_POST['url'];
+    if (add_link_from_user($title, $url, $user)) {
+      UserMessage::set_message('success', 'Link Added. Thanks!');
+    } else {
+      UserMessage::set_message('error', 'Sorry, could not add that link.');
+    }
   }
 
 ?>

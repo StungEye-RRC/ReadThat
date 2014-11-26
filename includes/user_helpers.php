@@ -6,7 +6,7 @@ function add_new_user_to_database($username, $password) {
   Database::prepare_and_execute($sql, $new_users_row);
 }
 
-function find_user_in_database($username) {
+function find_user_by_name($username) {
   $user_data = ['username' => $username];
   $sql = "SELECT * FROM users WHERE username = :username";
   $users = Database::prepare_and_execute($sql, $user_data)->fetchAll();
@@ -18,7 +18,7 @@ function find_user_in_database($username) {
 }
 
 function user_login_successful($username, $password) {
-  $user = find_user_in_database($username, $password);
+  $user = find_user_by_name($username, $password);
   if ($user) {
     return password_verify($password, $user['password']);
   } else {

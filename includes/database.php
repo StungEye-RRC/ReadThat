@@ -19,10 +19,8 @@ class Database {
   private function __construct() {
     try {
       $this->connection = new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME, self::DBUSER, self::DBPASSWORD);
-      //Sets the error handling mode to display exceptions
-      $this->connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(PDOException $e) {
-      echo $e->getMessage();
+      die("DB: " . $e->getMessage());
     }
   }
 

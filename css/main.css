@@ -3,8 +3,8 @@
 
 body {
     background-color: #2980b9;
-    font-family: 'Roboto';
     color: #222;
+    font-family: 'Roboto';
 }
 
 a {
@@ -16,33 +16,34 @@ a:hover {
   color: #1D638E;
 }
 
-form.login {
+form {
     background-color: #3498db;
     border: 2px solid #2980b9;
-    width: 400px;
     margin: 20px auto 0px auto;
-    padding: 2em;
+    padding: 30px;
+    width: 400px;
 }
 
-form.login input[type=text],
-form.login input[type=password],
-form.login input[type=submit] {
+form input[type=text],
+form input[type=password],
+form input[type=submit] {
+  color: #222;
   font-family: 'Roboto';
   font-size: 1.2em;
-  color: #222;
 }
 
 form input[type=text],
 form input[type=password] {
-  width: 96%;
-  height: 40px;
-  padding-left: 4%;
   background: #fff;
   border: none;
+  height: 40px;
+  margin-bottom: 1em;
   outline: none;
+  padding-left: 4%;
+  width: 96%;
 }
 
-form.login input[type=submit] {
+form input[type=submit] {
     background-color: #2980b9;
     border: 2px solid #2980b9;
     border-radius: 3px;
@@ -52,27 +53,23 @@ form.login input[type=submit] {
     transition: background-color 0.3s;
 }
 
-form.login input[type=submit]:hover {
+form input[type=submit]:hover {
     background-color: #3498db;
     border: 2px solid #2980b9;
     color: #eee;
 }
 
-form.login h4 {
+form h4 {
     color: #172120;
     font-size: 2em;
     margin-bottom: 1em;
-}
-
-form.login input[type=text], form.login input[type=password] {
-  margin-bottom: 1em;
 }
 
 div.error, div.success {
     margin: 10px auto 0px auto;
     padding: 1em 0;
     text-align: center;
-    width: 400px;
+    width: 460px;
 }
 
 div.error {

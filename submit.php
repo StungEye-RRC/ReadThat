@@ -1,23 +1,6 @@
-<?php
-  require('database.php');
-  $error_message = false;
-  $success_message = false;
+<?php require('partials/header.php') ?>
 
-  if ($_POST) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if (user_login_successful($db, $username, $password)) {
-      $success_message = "Login Successful.";
-    } else {
-      $error_message = "Username or Password is incorrect.";
-    }
-  }
-?>
-
-<?php require ('partials/header.php') ?>
-
-    <form action="login.php" method="post">
+    <form action="submit.php" method="post">
         <fieldset>
             <h4>ReadThat Login</h4>
             <p>

@@ -18,7 +18,7 @@
       $users = find_users_in_database($db, $username);
       if (count($users) == 0) {
         add_new_user_to_database($db, $username, $password);
-        $success_message = true;
+        $success_message = "Registration Successful.";
       } else {
         $error_message = "Sorry that username is already taken.";
       }
@@ -26,24 +26,10 @@
 
   }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ReadThat - Registration</title>
-    <link type="text/css" rel="stylesheet" href="css/main.css">
-</head>
-    <?php if ($error_message): ?>
-      <div class="error">
-          <strong>Registration error:</strong> <?= $error_message ?>
-      </div>
-    <?php endif; ?>
-    <?php if ($success_message): ?>
-      <div class="success">
-          Registration Successful. <a href="login.php">Login?</a>
-      </div>
-    <?php endif; ?>
 
-    <form action="register.php" method="post" class="login">
+<?php require('partials/header.php') ?>
+
+    <form action="register.php" method="post">
         <fieldset>
             <h4>ReadThat Registration</h4>
             <p>
@@ -60,5 +46,5 @@
             </p>
         </fieldset>
     </form>
-</body>
-</html>
+
+<?php require('partials/footer.php') ?>

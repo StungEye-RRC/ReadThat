@@ -1,0 +1,2 @@
+<!DOCTYPE html>
+<html><head>  <title>ReadThat - Login</title>  <link type="text/css" rel="stylesheet" href="css/main.css"></head><body>  <?php if ($error_message): ?>    <div class="error">      Login Failed.    </div>  <?php endif; ?>  <?php if ($success_message): ?>    <div class="success">      Login Successful.    </div>  <?php endif; ?>

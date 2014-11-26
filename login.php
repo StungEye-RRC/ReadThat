@@ -1,16 +1,15 @@
 <?php
-  require('database.php');
-  $error_message = false;
-  $success_message = false;
+  require('includes/database.php');
+  require('includes/user_message.php');
 
   if ($_POST) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     if (user_login_successful($db, $username, $password)) {
-      $success_message = "Login Successful.";
+      UserMessage::set_message('success', 'Login Successful.');
     } else {
-      $error_message = "Username or Password is incorrect.";
+      UserMessage::set_message('error','Username or Password is incorrect.');
     }
   }
 ?>

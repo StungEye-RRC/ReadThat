@@ -1,7 +1,6 @@
 <?php
-  require('database.php');
-  $error_message = false;
-  $success_message = false;
+  require('includes/database.php');
+  require('includes/user_message.php');
 
   if ($_POST) {
     $username = $_POST['username'];
@@ -9,18 +8,18 @@
     $password_confirmation = $_POST['password_confirmation'];
 
     if ($password != $password_confirmation) {
-      $error_message = "Sorry your password confirmation didn't match your password.";
+      UserMessage::set_message('error', 'Sorry your password confirmation did not match your password.');
     } else if (strlen($username) == 0) {
-      $error_message = "Your username must be at least one character.";
+      UserMessage::set_message('error', 'Your username must be at least one character.');
     } else if (strlen($password) < 8) {
-      $error_message = "Your password must be greater than 8 characters.";
+      UserMessage::set_message('error', 'Your password must be greater than 8 characters.');
     } else {
       $users = find_users_in_database($db, $username);
       if (count($users) == 0) {
         add_new_user_to_database($db, $username, $password);
-        $success_message = "Registration Successful.";
+        UserMessage::set_message('success', 'Registration Successful.');
       } else {
-        $error_message = "Sorry that username is already taken.";
+        UserMessage::set_message('error', 'Sorry that username is already taken.');
       }
     }
 

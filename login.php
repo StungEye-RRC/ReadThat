@@ -18,7 +18,7 @@
 
     <form action="login.php" method="post">
         <fieldset>
-            <h4>ReadThat Login</h4>
+            <h1>ReadThat Login</h1>
             <p>
               <input name="username" type="text" placeholder="User Name" />
             </p>

@@ -29,7 +29,7 @@
 
     <form action="register.php" method="post">
         <fieldset>
-            <h4>ReadThat Registration</h4>
+            <h1>ReadThat Registration</h1>
             <p>
               <input name="username" type="text" placeholder="User Name" />
             </p>

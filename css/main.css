@@ -59,7 +59,7 @@ form input[type=submit]:hover {
     color: #eee;
 }
 
-form h4 {
+form h1, .links h1 {
     color: #172120;
     font-size: 2em;
     margin-bottom: 1em;

@@ -4,6 +4,7 @@
   $user = get_the_current_user();
   
   if (!$user) {
+    UserMessage::persist_message('error', 'Sorry, you must be logged in to submit.');
     redirect_to('login.php');
   }
   
@@ -27,7 +28,7 @@
 
 <form action="submit.php" method="post">
     <fieldset>
-        <h4>ReadThat Submission</h4>
+        <h1>ReadThat Submission</h1>
         <p>
           <input name="title" type="text" placeholder="Link Title" />
         </p>

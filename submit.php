@@ -1,8 +1,5 @@
 <?php
-  require('includes/database.php');
-  require('includes/user_message.php');
-  require('includes/user_helpers.php');
-  require('includes/link_helpers.php');
+  require('includes/includes.php');
   
   $user = get_the_current_user();
   

@@ -1,9 +1,5 @@
 <?php
-  require('includes/database.php');
-  require('includes/user_message.php');
-  require('includes/user_helpers.php');
-  require('includes/link_helpers.php');
-  require('includes/date_helpers.php');
+  require('includes/includes.php');
 
   if (get_the_current_user()) {
     UserMessage::set_message('success', 'You are logged in.');

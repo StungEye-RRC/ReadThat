@@ -3,6 +3,7 @@
   require('includes/user_message.php');
   require('includes/user_helpers.php');
   require('includes/link_helpers.php');
+  require('includes/date_helpers.php');
 
   if (get_the_current_user()) {
     UserMessage::set_message('success', 'You are logged in.');
@@ -21,7 +22,10 @@
   <?php else: ?>
     <ul>
       <?php foreach($links as $link): ?>
-        <li><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?></li>
+        <li>
+          <a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?>
+          <time title="<?= $link['created_at'] ?>" datetime="<?= $link['created_at'] ?>"><?= time_ago_in_words($link['created_at']) ?></time>.
+        </li>
       <?php endforeach ?>
     </ul>
   <?php endif ?>

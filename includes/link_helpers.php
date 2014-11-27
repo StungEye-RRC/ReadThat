@@ -9,7 +9,7 @@
 
     function get_all_links() {
         $data = [];
-        $sql = "SELECT * FROM links LEFT OUTER JOIN users ON links.user_id = users.id";
+        $sql = "SELECT links.url, links.title, links.user_id, links.created_at, users.id, users.username FROM links LEFT OUTER JOIN users ON links.user_id = users.id";
         $links = Database::prepare_and_execute($sql, $data);
         return $links->fetchAll();
     }

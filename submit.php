@@ -17,7 +17,8 @@
     } else if (strlen($url) == 0) {
       UserMessage::set_message('error', 'Sorry, the URL cannot be blank.');
     } else if (add_link_from_user($title, $url, $user)) {
-      UserMessage::set_message('success', 'Link Added. Thanks!');
+      UserMessage::persist_message('success', 'Link Added. Thanks!');
+      redirect_to('index.php');
     } else {
       UserMessage::set_message('error', 'Sorry, could not add that link.');
     }

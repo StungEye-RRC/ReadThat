@@ -1,4 +1,4 @@
 <?php
-    require('includes/user_helpers.php');
+    require('includes/includes.php');
     log_out_user();
 ?>

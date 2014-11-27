@@ -6,7 +6,7 @@
     $password = $_POST['password'];
 
     if ($user = user_login_successful($username, $password)) {
-      UserMessage::set_message('success', 'Login Successful.');
+      UserMessage::persist_message('success','You are logged in.');
       login_in_user($user);
     } else {
       UserMessage::set_message('error','Username or Password is incorrect.');

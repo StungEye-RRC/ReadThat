@@ -1,30 +1,27 @@
 <?php
   require('includes/includes.php');
 
-  if (get_the_current_user()) {
-    UserMessage::set_message('success', 'You are logged in.');
-  } else {
-    UserMessage::set_message('error', 'You are not logged in.');
-  }
-  
   $links = get_all_links();
 ?>
 
 <?php require('partials/header.php') ?>
 
-<section class="links">
-  <?php if (count($links) == 0): ?>
-    <p>No links found.</p>
-  <?php else: ?>
-    <ul>
-      <?php foreach($links as $link): ?>
-        <li>
-          <a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?>
-          <time title="<?= $link['created_at'] ?>" datetime="<?= $link['created_at'] ?>"><?= time_ago_in_words($link['created_at']) ?></time>.
-        </li>
-      <?php endforeach ?>
-    </ul>
-  <?php endif ?>
-</section>
+<?php if (count($links) == 0): ?>
+  <p class="links">No links found.</p>
+<?php else: ?>
+  <ul class="links">
+    <?php foreach($links as $link): ?>
+      <li>
+        <p class="title">
+          <a href="<?= $link['url'] ?>"><?= $link['title'] ?></a>
+        </p>
+        <p class="tagline">
+          Submitted <time title="<?= $link['created_at'] ?>" datetime="<?= $link['created_at'] ?>"><?= time_ago_in_words($link['created_at']) ?></time>
+          by <?= $link['username'] ?>.
+        </p>
+      </li>
+    <?php endforeach ?>
+  </ul>
+<?php endif ?>
 
 <?php require('partials/footer.php') ?>

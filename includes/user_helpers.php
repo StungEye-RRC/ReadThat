@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function redirect_to($path) {
   header('Location: ' . $path);
@@ -15,7 +14,7 @@ function get_the_current_user() {
 }
 
 function log_out_user() {
-  session_destroy();
+  unset($_SESSION['logged_in_user_id']);
   redirect_to('index.php');
 }
 

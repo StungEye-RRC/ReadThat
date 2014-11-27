@@ -16,7 +16,7 @@ a:hover {
   color: #1D638E;
 }
 
-form {
+form, .links {
     background-color: #3498db;
     border: 2px solid #2980b9;
     margin: 20px auto 0px auto;
@@ -65,7 +65,10 @@ form h4 {
     margin-bottom: 1em;
 }
 
-div.error, div.success {
+.links {
+}
+
+.error, .success {
     color: white;
     margin: 10px auto 0px auto;
     padding: 1em 0;
@@ -73,11 +76,11 @@ div.error, div.success {
     width: 460px;
 }
 
-div.error {
+.error {
     background-color: #e74c3c;
 }
 
-div.success {
+.success {
     background-color: #2ecc71;
 }
 

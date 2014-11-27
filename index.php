@@ -15,15 +15,16 @@
 
 <?php require('partials/header.php') ?>
 
-<?php if (count($links) == 0): ?>
-  <p>No links found.</p>
-<?php else: ?>
-<pre><?php print_r($links) ?></pre>
-  <ul>
-    <?php foreach($links as $link): ?>
-      <li><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?></li>
-    <?php endforeach ?>
-  </ul>
-<?php endif ?>
+<section class="links">
+  <?php if (count($links) == 0): ?>
+    <p>No links found.</p>
+  <?php else: ?>
+    <ul>
+      <?php foreach($links as $link): ?>
+        <li><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a> submitted by <?= $link['username'] ?></li>
+      <?php endforeach ?>
+    </ul>
+  <?php endif ?>
+</section>
 
 <?php require('partials/footer.php') ?>

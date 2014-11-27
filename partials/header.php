@@ -16,7 +16,6 @@
       <?= UserMessage::get_message('success') ?>
     </div>
   <?php endif; ?>
-  <pre><?php print_r($_SESSION) ?></pre>
 
   <nav>
     <ul>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReadThat</title>
+  <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  
+      <div class="success">
+      Link Added. Thanks!    </div>
+  
+  <nav>
+    <ul>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="submit.php">Submit</a></li>
+              <li><a href="logout.php">Logout</a></li>
+          </ul>
+  </nav>
+  
+
+<form action="submit.php" method="post">
+    <fieldset>
+        <h1>ReadThat Submission</h1>
+        <p>
+          <input name="title" type="text" placeholder="Link Title" />
+        </p>
+        <p>
+          <input name="url" type="text" placeholder="http://somedomain.com/some_path/"/>
+        </p>
+        <p class="right">
+            <input name="submit" value="submit" type="submit">
+        </p>
+    </fieldset>
+</form>
+
+</body>
+</html>

@@ -7,9 +7,9 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (user_login_successful($username, $password)) {
+    if ($user = user_login_successful($username, $password)) {
       UserMessage::set_message('success', 'Login Successful.');
-      login_in_user($username);
+      login_in_user($user);
     } else {
       UserMessage::set_message('error','Username or Password is incorrect.');
     }

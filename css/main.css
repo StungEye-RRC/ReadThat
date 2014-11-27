@@ -16,7 +16,7 @@ a:hover {
   color: #1D638E;
 }
 
-form, .links {
+form, .links, nav ul {
     background-color: #3498db;
     border: 2px solid #2980b9;
     margin: 20px auto 0px auto;
@@ -65,7 +65,22 @@ form h4 {
     margin-bottom: 1em;
 }
 
-.links {
+.links li {
+    margin-bottom: 1em;
+}
+
+.links .tagline {
+    margin-top: 3px;
+    font-size: 0.8em;
+}
+
+nav ul {
+    padding: 15px 30px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
 .error, .success {

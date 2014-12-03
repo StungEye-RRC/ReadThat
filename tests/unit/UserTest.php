@@ -17,7 +17,6 @@ class UserTest extends \Codeception\TestCase\Test {
     public function testAddingUserToDatabase() {
         $username = "test_username";
         add_new_user_to_database($username, 'password');
-        
         $this->tester->seeInDatabase('users', array('username' => $username));
     }
     

@@ -29,6 +29,13 @@ class LinkTest extends \Codeception\TestCase\Test {
         $this->tester->assertEquals($this->link['title'], 'Test Title');
     }
     
+    public function testFindingLinkVoteByLinkAndUser() {
+        $link = find_link_by_id(3);
+        $this->tester->assertEquals($link['title'], 'Reddit');
+        $link_vote = find_link_vote_by_link_and_user($link, $this->user);
+        $this->tester->assertEquals($link_vote['link_id'], $link['id']);
+    }
+    
     public function testUpVotingOfLink() {
         upvote_link_by_user($this->link, $this->user);
         $this->tester->seeInDatabase('link_votes', array( 'user_id' => $this->user['id'],

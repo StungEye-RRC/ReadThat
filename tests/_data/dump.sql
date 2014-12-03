@@ -75,7 +75,12 @@ CREATE TABLE IF NOT EXISTS `link_votes` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+INSERT INTO `link_votes` (`id`, `user_id`, `link_id`, `amount`, `created_at`, `updated_at`) VALUES
+(1, 11, 3, 1, '2014-11-26 15:51:32', '2014-11-26 15:51:32');
+INSERT INTO `link_votes` (`id`, `user_id`, `link_id`, `amount`, `created_at`, `updated_at`) VALUES
+(2, 13, 3, 1, '2014-11-26 15:51:32', '2014-11-26 15:51:32');
 
 -- --------------------------------------------------------
 

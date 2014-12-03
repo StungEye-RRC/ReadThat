@@ -9,7 +9,7 @@ body {
 
 a {
   color: #0E364F;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 a:hover {
@@ -57,6 +57,7 @@ form input[type=submit]:hover {
     background-color: #3498db;
     border: 2px solid #2980b9;
     color: #eee;
+    cursor: pointer;
 }
 
 form h1, .links h1 {
@@ -66,12 +67,53 @@ form h1, .links h1 {
 }
 
 .links li {
-    margin-bottom: 1em;
+    height: 55px;
+    margin-bottom: 1.5em;
+    overflow: auto;
+}
+
+.links .title {
+    font-size: 1.1em;
 }
 
 .links .tagline {
-    margin-top: 3px;
+    margin-top: 23px;
     font-size: 0.8em;
+    color: #454545;
+}
+
+.links aside, .links summary {
+    float: left;
+}
+
+.links aside {
+    margin-right: 1em;
+}
+
+.links aside header, .links aside footer {
+}
+
+.links aside p {
+    color: #454545;
+    font-size: 17px;
+    margin: 2px auto;
+    text-align: center;
+}
+
+.links aside form {
+   border: 0;
+   margin: 0;
+   padding: 0;
+   width: auto;
+}
+
+.links aside form input[type=submit] {
+    font-family: sans-serif;
+    font-size: 13px;
+    display: block;
+    line-height: 13px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul {

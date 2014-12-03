@@ -18,14 +18,14 @@
             <header>
               <form action="vote.php" method="post">
                 <input type="hidden" name="id" value="<?= $link['link_id'] ?>">
-                <input type="submit" name="up" value="&#9650;">
+                <input type="submit" name="up" value="&#9650;" <?= $link['current_user_amount'] == 1 ? "class='voted'" : "" ?>>
               </form>
             </header>
-            <p><?= is_numeric($link['amount_sum']) ? $link['amount_sum'] : '•' ?></p>
+            <p><?= !is_numeric($link['amount_sum']) || $link['amount_sum'] == 0  ? '•' : $link['amount_sum'] ?></p>
             <footer>
               <form action="vote.php" method="post">
                 <input type="hidden" name="id" value="<?= $link['link_id'] ?>">
-                <input type="submit" name="down" value="&#9660;">
+                <input type="submit" name="down" value="&#9660;" <?= $link['current_user_amount'] == -1 ? "class='voted'" : "" ?>>
               </form>
             </footer>
           </aside>

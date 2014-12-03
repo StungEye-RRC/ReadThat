@@ -11,12 +11,26 @@
     }
 
     function get_all_links() {
+        $current_user = get_the_current_user();
         $data = [];
-        $sql = "SELECT links.id as link_id, links.url, links.title, links.user_id, links.created_at, users.id, users.username, SUM(link_votes.amount) as amount_sum " .
-               "FROM links " .
-                 "LEFT OUTER JOIN users ON links.user_id = users.id " .
-                 "LEFT OUTER JOIN link_votes on links.id = link_votes.link_id  " .
-                 "group by links.id";
+        $sql = "SELECT links.url, links.title, links.user_id, links.created_at, users.id, users.username, COALESCE(SUM(link_votes.amount), 0) AS amount_sum, links.id AS link_id ";
+        
+        if ($current_user) {
+            $sql .= ", LV.amount as current_user_amount ";
+        }
+        
+        $sql .= "FROM links " .
+                "LEFT OUTER JOIN users ON links.user_id = users.id " .
+                "LEFT OUTER JOIN link_votes on links.id = link_votes.link_id  ";
+        
+        if ($current_user) {
+            $sql .= "LEFT OUTER JOIN (SELECT * FROM link_votes WHERE user_id = {$current_user['id']}) LV on LV.link_id = links.id ";
+        }
+
+        $sql .= "GROUP BY links.id " . 
+                "ORDER BY amount_sum DESC";
+                
+        echo $sql;
         $links = Database::prepare_and_execute($sql, $data);
         return $links->fetchAll();
     }

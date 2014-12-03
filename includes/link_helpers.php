@@ -12,7 +12,7 @@
 
     function get_all_links() {
         $data = [];
-        $sql = "SELECT links.url, links.title, links.user_id, links.created_at, users.id, users.username, SUM(link_votes.amount) as amount_sum " .
+        $sql = "SELECT links.id as link_id, links.url, links.title, links.user_id, links.created_at, users.id, users.username, SUM(link_votes.amount) as amount_sum " .
                "FROM links " .
                  "LEFT OUTER JOIN users ON links.user_id = users.id " .
                  "LEFT OUTER JOIN link_votes on links.id = link_votes.link_id  " .

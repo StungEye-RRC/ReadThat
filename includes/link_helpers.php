@@ -12,10 +12,11 @@
 
     function get_all_links() {
         $data = [];
-        $sql = "SELECT links.url, links.title, links.user_id, links.created_at, users.id, users.username, link_votes.amount " .
+        $sql = "SELECT links.url, links.title, links.user_id, links.created_at, users.id, users.username, SUM(link_votes.amount) as amount_sum " .
                "FROM links " .
-               "LEFT OUTER JOIN users ON links.user_id = users.id " .
-               "LEFT OUTER JOIN link_votes on links.id = link_votes.link_id";
+                 "LEFT OUTER JOIN users ON links.user_id = users.id " .
+                 "LEFT OUTER JOIN link_votes on links.id = link_votes.link_id  " .
+                 "group by links.id";
         $links = Database::prepare_and_execute($sql, $data);
         return $links->fetchAll();
     }

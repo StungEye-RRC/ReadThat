@@ -21,7 +21,7 @@
                 <input type="submit" name="up" value="&#9650;">
               </form>
             </header>
-            <p>5</p>
+            <p><?= is_numeric($link['amount_sum']) ? $link['amount_sum'] : '•' ?></p>
             <footer>
               <form action="vote.php" method="post">
                 <input type="hidden" name="id" value="<?= $link['id'] ?>">

@@ -116,6 +116,15 @@ form h1, .links h1 {
     padding: 0;
 }
 
+.links aside form input[type=submit].voted {
+    color: #555;
+    cursor: default;
+}
+
+.links aside form input[type=submit].voted:hover {
+    background-color: #2980b9;
+}
+
 nav ul {
     padding: 15px 30px;
 }
